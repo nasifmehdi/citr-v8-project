@@ -90,14 +90,14 @@ const SearchParams = () => {
   const [animal, setAnimal] = useState("");
   //const [breed, setBreed] = useState("");
   const [breeds] = useBreedList(animal);
-  const [pets, setPets] = useState([]);
+  //const [pets, setPets] = useState([]);
   const [requestParams, setRequestParams] = useState({
     location: "",
     animal: "",
     breed: "",
   });
-  
   const results = useQuery(["search", requestParams], fetchSearch);
+const pets = results?.data?.pets ?? [];
  
  
   
