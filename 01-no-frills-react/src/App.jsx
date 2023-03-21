@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-// eslint-disable-next-line no-unused-vars
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Pet from './Pet'
+import Details from './Details';
 import SearchParams from './SearchParams';
 
 /*const App = () => {
@@ -17,7 +17,14 @@ import SearchParams from './SearchParams';
 }*/
 
 const App = () =>{
-  return (<SearchParams />)
+  return (<BrowserRouter>
+    <h1>Adopt Me!</h1>
+    <Routes>
+      <Route path="/details/:id" element={<Details />} />
+      <Route path="/" element={<SearchParams />} />
+    </Routes>
+  </BrowserRouter>
+  )
 }
 
 
